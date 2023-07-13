@@ -6,7 +6,7 @@ shift
 
 [ "$action" = "usage" ] && {
   echo "  Visualize tasks by due date:"
-  echo "    due"
+  echo "    due [n]"
   echo "      default behaviour generates a list tasks due today or overdue"
   echo "      Optional argument (integer n) also shows tasks due in next n days."
   echo ""
