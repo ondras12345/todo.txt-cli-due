@@ -64,6 +64,11 @@ def main(todo_file, future_days=1):
         key = os.getenv("TODO_TXT_DUE_KEY", "due")
 
         for i, task in enumerate(content):
+
+            # Skip completed tasks
+            if os.getenv("TODO_TXT_DUE_HIDECOMPLETED") == "1" and task[0] == "x":
+                continue
+
             match = re.findall(r"%s:(\d{4}-\d{2}-\d{2})" % key, task)
 
             if match:
