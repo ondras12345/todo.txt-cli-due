@@ -96,7 +96,8 @@ def main(todo_file, future_days=1):
         print("===================================")
         print("Overdue tasks:")
         print("===================================")
-        for task in overdue:
+        # sort overdue tasks by priority
+        for task in sorted(overdue, key=lambda t: t.split(' ', 1)[-1]):
             task_print(task)
     if len(due_today) > 0:
         print("\n===================================")
